@@ -1,0 +1,24 @@
+{
+  "name": "prehistoric-domain-map",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build --no-source-maps index.html"
+  },
+  "author": "Benjamin Dupuy",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^3.2.2",
+    "prettier": "^2.1.2"
+  },
+  "dependencies": {
+    "lazysizes": "^5.2.2",
+    "magic-grid": "^3.2.4"
+  }
+}

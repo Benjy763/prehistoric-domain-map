@@ -1,0 +1,1 @@
+{"id":"H99C","dependencies":[{"name":"C:\\Users\\Benjamin\\workspace\\prehistoric-domain-map\\package.json","includedInParent":true,"mtime":1622192956796}],"generated":{"js":"var a=L.map(\"map\").setView([0,0],0);L.tileLayer(\"map-tiles/{z}/{x}/{y}.png\").addTo(a);"},"sourceMaps":null,"error":null,"hash":"cb8414ec1d0c79d5c3105f5ea44a1845","cacheData":{"env":{}}}
