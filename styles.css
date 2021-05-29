@@ -248,3 +248,8 @@ body {
   box-shadow: none;
   outline: none;
 }
+
+.leaflet-top {
+  top: initial !important;
+  bottom: 20px !important;
+}
