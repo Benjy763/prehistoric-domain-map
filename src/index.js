@@ -99,6 +99,8 @@ function addLayers() {
   // attractions.addLayer(markers['tourMarker']);
   // map.removeLayer(infos);
   // map.addLayer(infos);
+  // tourMarker.openPopup();
+  // map.panTo(trice2Marker.getLatLng());
 }
 
 function addMarkers() {
@@ -117,7 +119,6 @@ function addMarkers() {
     <div class="leaflet-popup__description">Click to enter</div>
     <button type="button" class="leaflet-popup__button leaflet-popup__button-open">Open</button>
   `);
-  tourMarker.openPopup();
 
   canoeMarker = L.marker([-9.96885060854611, -36.03515625000001], {
     icon: L.icon({
@@ -318,7 +319,17 @@ function addMarkers() {
 }
 
 function initMapEvents() {
-  map.on('click', (e) => {
-    console.log(e.latlng);
-  });
+  // map.on('click', (e) => {
+  //   console.log(e.latlng);
+  // });
+
+  var inputs = document.querySelectorAll('.layer-control-wrapper .item');
+  for (i = 0; i < inputs.length; i++) {
+    (function (i) {
+      inputs[i].addEventListener('click', function () {
+        markers[inputs[i].getAttribute('data-marker')].openPopup();
+        map.panTo(markers[inputs[i].getAttribute('data-marker')].getLatLng());
+      });
+    })(i);
+  }
 }
