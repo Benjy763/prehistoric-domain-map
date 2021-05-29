@@ -5,6 +5,12 @@ let attractions = null,
   infos = null,
   services = null;
 
+let markers = {};
+let markerSize = {
+  sm: 40,
+  lg: 60
+};
+
 let tourMarker,
   canoeMarker,
   aviaryMarker,
@@ -41,6 +47,24 @@ function initMap() {
       map.unproject(mapNE, map.getMaxZoom())
     )
   );
+
+  if (window.screen.availWidth > 2500) {
+    map.setMinZoom(4);
+    markerSize = {
+      sm: 80,
+      lg: 120
+    };
+  }
+
+  L.LayerGroup.include({
+    customGetLayer: function (id) {
+      for (var i in this._layers) {
+        if (this._layers[i].id == id) {
+          return this._layers[i];
+        }
+      }
+    }
+  });
 }
 
 function addLayers() {
@@ -70,151 +94,157 @@ function addLayers() {
   map.addLayer(attractions);
   map.addLayer(services);
   map.addLayer(infos);
+  // console.log(markers['tourMarker']);
+  // attractions.removeLayer(markers['tourMarker']);
+  // attractions.addLayer(markers['tourMarker']);
+  // map.removeLayer(infos);
+  // map.addLayer(infos);
 }
 
 function addMarkers() {
   tourMarker = L.marker([17.308687886770034, 6.328125000000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-tour.png',
-      iconSize: [60, 60],
-      iconAnchor: [30, 30],
-      popupAnchor: [0, -30]
+      iconSize: [markerSize.lg, markerSize.lg],
+      iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
+      popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="title">Prehistoric Tour</div>
-    <div class="separation"></div>
+    <div class="leaflet-popup__title">Prehistoric Tour</div>
+    <div class="leaflet-popup__separation"></div>
     <img src="/assets/pd-tour.jpg"></img>
-    <div class="description">Experience the night tour of the park</div>
-    <div class="description">Click to enter</div>
-    <button type="button" class="button open">Open</button>
+    <div class="leaflet-popup__description">Experience the night tour of the park</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <button type="button" class="leaflet-popup__button leaflet-popup__button-open">Open</button>
   `);
+  tourMarker.openPopup();
 
   canoeMarker = L.marker([-9.96885060854611, -36.03515625000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-canoe.png',
-      iconSize: [60, 60],
-      iconAnchor: [30, 30],
-      popupAnchor: [0, -30]
+      iconSize: [markerSize.lg, markerSize.lg],
+      iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
+      popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="title">Valley of wonders</div>
-    <div class="separation"></div>
+    <div class="leaflet-popup__title">Valley of wonders</div>
+    <div class="leaflet-popup__separation"></div>
     <img src="/assets/pd-river.jpg"></img>
-    <div class="description">Discover an unknown world by canoe</div>
-    <div class="description">Click to enter</div>
-    <button type="button" class="button closed" disabled>Closed</button>
+    <div class="leaflet-popup__description">Discover an unknown world by canoe</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
   `);
 
   aviaryMarker = L.marker([15.114552871944115, -59.94140625000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-aviary.png',
-      iconSize: [60, 60],
-      iconAnchor: [30, 30],
-      popupAnchor: [0, -30]
+      iconSize: [markerSize.lg, markerSize.lg],
+      iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
+      popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="title">Aviary</div>
-    <div class="separation"></div>
+    <div class="leaflet-popup__title">Aviary</div>
+    <div class="leaflet-popup__separation"></div>
     <img src="/assets/pd-aviary.jpg"></img>
-    <div class="description">Meet the giant flying reptiles</div>
-    <div class="description">Click to enter</div>
-    <button type="button" class="button closed" disabled>Closed</button>
+    <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
   `);
 
   beachMarker = L.marker([-31.80289258670676, -7.998046875000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-beach.png',
-      iconSize: [60, 60],
-      iconAnchor: [30, 30],
-      popupAnchor: [0, -30]
+      iconSize: [markerSize.lg, markerSize.lg],
+      iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
+      popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="title">Cretaceous Beach</div>
-    <div class="separation"></div>
+    <div class="leaflet-popup__title">Cretaceous Beach</div>
+    <div class="leaflet-popup__separation"></div>
     <img src="/assets/pd-beach.jpg"></img>
-    <div class="description">Relax on the most exotic beach</div>
-    <div class="description">Click to enter</div>
-    <button type="button" class="button closed" disabled>Closed</button>
+    <div class="leaflet-popup__description">Relax on the most exotic beach</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
   `);
 
   brachioMarker = L.marker([21.453068633086783, -11.25], {
     icon: L.icon({
       iconUrl: 'assets/map/map-brachio.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Brachiosaurus');
 
   diloMarker = L.marker([39.63953756436671, -28.125000000000004], {
     icon: L.icon({
       iconUrl: 'assets/map/map-dilo.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Dilophosaurus');
 
   trexMarker = L.marker([44.59046718130883, -8.613281250000002], {
     icon: L.icon({
       iconUrl: 'assets/map/map-trex.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('T-Rex');
 
   deinoMarker = L.marker([37.30027528134433, 10.371093750000002], {
     icon: L.icon({
       iconUrl: 'assets/map/map-deino.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Deinonychus');
 
   triceMarker = L.marker([26.58852714730864, 17.050781250000004], {
     icon: L.icon({
       iconUrl: 'assets/map/map-trice.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Triceratops');
 
   brachio2Marker = L.marker([-15.623036831528252, -22.851562500000004], {
     icon: L.icon({
       iconUrl: 'assets/map/map-brachio.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Brachiosaurus');
 
   trice2Marker = L.marker([-21.94304553343818, -23.378906250000004], {
     icon: L.icon({
       iconUrl: 'assets/map/map-trice.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Triceratops');
 
   pteranodonMarker = L.marker([21.94304553343818, -65.21484375000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-pteranodon.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Pteranodon');
 
   boatMarker = L.marker([-5.266007882805498, 107.05078125000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-boat.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup(`
     <div class="title">Ferry</div>
@@ -225,47 +255,66 @@ function addMarkers() {
   restaurantMarker = L.marker([6.315298538330033, 3.251953125], {
     icon: L.icon({
       iconUrl: 'assets/map/map-eat.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup(`
-    <div class="title">Fossile Restaurant</div>
-    <div class="separation"></div>
+    <div class="leaflet-popup__title">Fossile Restaurant</div>
+    <div class="leaflet-popup__separation"></div>
     <img src="/assets/pd-eat.jpg"></img>
-    <div class="description">Dishes from another time</div>
-    <div class="description">Click to enter</div>
-    <button type="button" class="button closed" disabled>Closed</button>
+    <div class="leaflet-popup__description">Dishes from another time</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
   `);
 
   shopMarker = L.marker([3.425691524418062, 6.591796875000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-shop.png',
-      iconSize: [40, 40],
-      iconAnchor: [20, 20],
-      popupAnchor: [0, -20]
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup(`
-    <div class="title">Prehistoric Domain Shop</div>
-    <div class="separation"></div>
+    <div class="leaflet-popup__title">Prehistoric Domain Shop</div>
+    <div class="leaflet-popup__separation"></div>
     <img src="/assets/pd-shop.jpg"></img>
-    <div class="description">Don't leave without a souvenir</div>
-    <div class="description">Click to enter</div>
-    <button type="button" class="button closed" disabled>Closed</button>
+    <div class="leaflet-popup__description">Don't leave without a souvenir</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
   `);
 
   homeMarker = L.marker([6.664607562172573, 8.613281250000002], {
     icon: L.icon({
       iconUrl: 'assets/map/map-home.png',
-      iconSize: [40, 40], // size of the icon
-      iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
-      popupAnchor: [0, -20] // point from which the popup should open relative to the iconAnchor
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup(`
-    <div class="title">Park entrance</div>
-    <div class="separation"></div>
-    <div class="description">Your journey starts here !</div>
+    <div class="leaflet-popup__title">Park entrance</div>
+    <div class="leaflet-popup__separation"></div>
+    <div class="leaflet-popup__description">Your journey starts here !</div>
   `);
+
+  markers = {
+    tourMarker,
+    canoeMarker,
+    aviaryMarker,
+    homeMarker,
+    boatMarker,
+    restaurantMarker,
+    shopMarker,
+    beachMarker,
+    brachioMarker,
+    diloMarker,
+    trexMarker,
+    deinoMarker,
+    triceMarker,
+    brachio2Marker,
+    trice2Marker,
+    pteranodonMarker
+  };
 }
 
 function initMapEvents() {
