@@ -322,8 +322,20 @@ function initMapEvents() {
   // map.on('click', (e) => {
   //   console.log(e.latlng);
   // });
+  let layerControl = document.querySelector('.layer-control');
+  console.log(layerControl);
 
-  var inputs = document.querySelectorAll('.layer-control-wrapper .item');
+  document.querySelector('#pan').addEventListener('click', function () {
+    console.log(layerControl.style.right === '');
+    if (layerControl.style.right !== '' && layerControl.style.right !== '0px') {
+      layerControl.style.right = 0;
+      return;
+    }
+    let width = document.querySelector('.layer-control').offsetWidth;
+    layerControl.style.right = `-${width}px`;
+  });
+
+  let inputs = document.querySelectorAll('.layer-control-wrapper .item');
   for (i = 0; i < inputs.length; i++) {
     (function (i) {
       inputs[i].addEventListener('click', function () {
