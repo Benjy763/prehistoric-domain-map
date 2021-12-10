@@ -114,10 +114,10 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Prehistoric Tour</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/pd-tour.jpg"></img>
+    <img src="/assets/item-tour-white.png"></img>
     <div class="leaflet-popup__description">Experience the night tour of the park</div>
     <div class="leaflet-popup__description">Click to enter</div>
-    <button type="button" class="leaflet-popup__button leaflet-popup__button-open">Open</button>
+    <a class="leaflet-popup__button leaflet-popup__button-closed">Closed</a>
   `);
 
   canoeMarker = L.marker([-9.96885060854611, -36.03515625000001], {
@@ -130,10 +130,10 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Valley of wonders</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/pd-river.jpg"></img>
+    <img src="/assets/item-canoe-white.png"></img>
     <div class="leaflet-popup__description">Discover an unknown world by canoe</div>
     <div class="leaflet-popup__description">Click to enter</div>
-    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   aviaryMarker = L.marker([15.114552871944115, -59.94140625000001], {
@@ -146,10 +146,10 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Aviary</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/pd-aviary.jpg"></img>
+    <img src="/assets/item-pteranodon-white.png"></img>
     <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
     <div class="leaflet-popup__description">Click to enter</div>
-    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   beachMarker = L.marker([-31.80289258670676, -7.998046875000001], {
@@ -162,10 +162,10 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Cretaceous Beach</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/pd-beach.jpg"></img>
+    <img src="/assets/item-beach-white.png"></img>
     <div class="leaflet-popup__description">Relax on the most exotic beach</div>
     <div class="leaflet-popup__description">Click to enter</div>
-    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   brachioMarker = L.marker([21.453068633086783, -11.25], {
@@ -263,10 +263,10 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Fossile Restaurant</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/pd-eat.jpg"></img>
+    <img src="/assets/item-eat-white.png"></img>
     <div class="leaflet-popup__description">Dishes from another time</div>
     <div class="leaflet-popup__description">Click to enter</div>
-    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
   `);
 
   shopMarker = L.marker([3.425691524418062, 6.591796875000001], {
@@ -279,10 +279,10 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Prehistoric Domain Shop</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/pd-shop.jpg"></img>
+    <img src="/assets/item-shop-white.png"></img>
     <div class="leaflet-popup__description">Don't leave without a souvenir</div>
     <div class="leaflet-popup__description">Click to enter</div>
-    <button type="button" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</button>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
   `);
 
   homeMarker = L.marker([6.664607562172573, 8.613281250000002], {
