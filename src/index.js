@@ -238,7 +238,7 @@ function addMarkers() {
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
     })
-  }).bindPopup('Pteranodon');
+  }).bindPopup('Quetzalcoatlus');
 
   boatMarker = L.marker([-5.266007882805498, 107.05078125000001], {
     icon: L.icon({
