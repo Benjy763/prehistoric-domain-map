@@ -261,7 +261,7 @@ function addMarkers() {
       popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup(`
-    <div class="leaflet-popup__title">Fossile Restaurant</div>
+    <div class="leaflet-popup__title">Fossil Restaurant</div>
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-eat-white.png"></img>
     <div class="leaflet-popup__description">Dishes from another time</div>
