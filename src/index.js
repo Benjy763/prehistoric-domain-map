@@ -186,7 +186,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Flying giants</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-quetza-white.png"></img>
+    <img src="/assets/item-aviary-white.png"></img>
     <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
     <div class="leaflet-popup__description">Click to enter</div>
     ${
@@ -224,7 +224,7 @@ function addMarkers() {
       popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="leaflet-popup__title">Cine</div>
+    <div class="leaflet-popup__title">How did you do this ?</div>
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-cine-white.png"></img>
     <div class="leaflet-popup__description">How to recreate a prehistoric world</div>

@@ -43,6 +43,11 @@ body {
   right: 0;
   top: 10%;
   display: flex;
+  flex-direction: column;
+}
+
+.layer-control-container {
+  display: flex;
 }
 
 .layer-control-wrapper {
@@ -74,11 +79,14 @@ body {
 } */
 
 .layer-control-wrapper__title {
+  z-index: 999;
+  background-color: #1d1d1d;
   width: 100%;
   text-align: center;
   text-transform: uppercase;
   font-size: 0.875rem;
   padding: 1.25rem 0;
+  color: #d4c9ba;
   border-bottom: 1px solid #d4c9ba;
 }
 
