@@ -196,6 +196,7 @@ body {
 
 #map .leaflet-popup .leaflet-popup-content .leaflet-popup__button {
   display: inline-block;
+  text-decoration: none;
   color: #1d1d1d;
   cursor: default;
   padding: 0.8rem 1rem;
