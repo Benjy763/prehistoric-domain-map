@@ -18,6 +18,7 @@ const supportedPlatform = [
   'Mac68K',
   'Win16',
   'Linux i686',
+  'Linux x86_64',
   'Windows'
 ];
 let isMobile =
@@ -150,11 +151,11 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-tour-white.png"></img>
     <div class="leaflet-popup__description">Experience the night tour of the park</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR</div>
     ${
       isMobile
         ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/tour-scene/" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Close</a>'
+        : '<a href="https://tour.prehistoricdomain.com/tour-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>'
     }
   `);
 
@@ -170,9 +171,9 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-canoe-white.png"></img>
     <div class="leaflet-popup__description">Discover an unknown world by canoe</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR · MOBILE · QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>${
-      isMobile ? 'Device not supported' : 'Close'
+      isMobile ? 'Device not supported' : 'Soon'
     }</a>
   `);
 
@@ -188,11 +189,11 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-aviary-white.png"></img>
     <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR · MOBILE · QUEST</div>
     ${
       isMobile
         ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Close</a>'
+        : '<a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>'
     }
   `);
 
@@ -208,11 +209,11 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-lagoon-white.png"></img>
     <div class="leaflet-popup__description">Meet the aquatic creatures of prehistory</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR · MOBILE · QUEST</div>
     ${
       isMobile
         ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Close</a>'
+        : '<a href="https://tour.prehistoricdomain.com/lagoon-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>'
     }
   `);
 
@@ -224,15 +225,15 @@ function addMarkers() {
       popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="leaflet-popup__title">How did you do this ?</div>
+    <div class="leaflet-popup__title">Cinemagma</div>
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-cine-white.png"></img>
-    <div class="leaflet-popup__description">How to recreate a prehistoric world</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">Dinosaurs on the big screen too</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR · MOBILE · QUEST</div>
     ${
       isMobile
         ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-closed" disabled>Close</a>'
+        : '<a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-open" disabled>Open</a>'
     }
   `);
 
@@ -248,9 +249,9 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-security-white.png"></img>
     <div class="leaflet-popup__description">The biggest of all the carnivorous dinosaurs</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR · MOBILE · QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>${
-      isMobile ? 'Device not supported' : 'Close'
+      isMobile ? 'Device not supported' : 'Soon'
     }</a>
   `);
 
@@ -266,9 +267,9 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-beach-white.png"></img>
     <div class="leaflet-popup__description">Relax on the most exotic beach</div>
-    <div class="leaflet-popup__description">Click to enter</div>
+    <div class="leaflet-popup__description">DESKTOP · PCVR · MOBILE · QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>${
-      isMobile ? 'Device not supported' : 'Close'
+      isMobile ? 'Device not supported' : 'Soon'
     }</a>
   `);
 

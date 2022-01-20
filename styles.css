@@ -109,7 +109,7 @@ body {
   transition: all ease-in 0.2s;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 6.25rem;
   height: 6.25rem;
