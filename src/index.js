@@ -55,7 +55,6 @@ addMarkers();
 addLayers();
 
 function initMap() {
-  console.log(isMobile);
   L.tileLayer('assets/map-tiles/{z}/{x}/{y}.png', {
     minZoom: 3,
     maxZoom: 4,
@@ -139,6 +138,38 @@ function addMarkers() {
     <div class="leaflet-popup__description">Your journey starts here !</div>
   `);
 
+  restaurantMarker = L.marker([6.315298538330033, 3.251953125], {
+    icon: L.icon({
+      iconUrl: 'assets/map/map-eat.png',
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
+    })
+  }).bindPopup(`
+    <div class="leaflet-popup__title">Fossil Restaurant</div>
+    <div class="leaflet-popup__separation"></div>
+    <img src="/assets/item-eat-white.png"></img>
+    <div class="leaflet-popup__description">Dishes from another time</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
+  `);
+
+  shopMarker = L.marker([3.425691524418062, 3.251953125], {
+    icon: L.icon({
+      iconUrl: 'assets/map/map-shop.png',
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
+    })
+  }).bindPopup(`
+    <div class="leaflet-popup__title">Prehistoric Domain Shop</div>
+    <div class="leaflet-popup__separation"></div>
+    <img src="/assets/item-shop-white.png"></img>
+    <div class="leaflet-popup__description">Don't leave without a souvenir</div>
+    <div class="leaflet-popup__description">Click to enter</div>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
+  `);
+
   tourMarker = L.marker([17.308687886770034, 6.328125000000001], {
     icon: L.icon({
       iconUrl: 'assets/map/map-tour.png',
@@ -172,9 +203,7 @@ function addMarkers() {
     <img src="/assets/item-canoe-white.png"></img>
     <div class="leaflet-popup__description">Discover an unknown world by canoe</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
-    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>${
-      isMobile ? 'Device not supported' : 'Soon'
-    }</a>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   aviaryMarker = L.marker([15.114552871944115, -59.94140625000001], {
@@ -190,11 +219,7 @@ function addMarkers() {
     <img src="/assets/item-aviary-white.png"></img>
     <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
-    ${
-      isMobile
-        ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>'
-    }
+    <a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>
   `);
 
   lagoonMarker = L.marker([-50, 18], {
@@ -210,11 +235,7 @@ function addMarkers() {
     <img src="/assets/item-lagoon-white.png"></img>
     <div class="leaflet-popup__description">Meet the aquatic creatures of prehistory</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
-    ${
-      isMobile
-        ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/lagoon-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>'
-    }
+    <a href="https://tour.prehistoricdomain.com/lagoon-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>
   `);
 
   cineMarker = L.marker([4, 13], {
@@ -228,13 +249,13 @@ function addMarkers() {
     <div class="leaflet-popup__title">Cinema</div>
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-cine-white.png"></img>
-    <div class="leaflet-popup__description">CITIPATI</div>
+    <div class="leaflet-popup__description">To Be Defined</div>
     <div class="leaflet-popup__description">Follow a dinosaur in his last moments</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
     ${
       isMobile
         ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
-        : '<a href="https://tour.prehistoricdomain.com/cinema-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>'
+        : '<a class="leaflet-popup__button leaflet-popup__button-closed">Soon</a>'
     }
   `);
 
@@ -251,9 +272,7 @@ function addMarkers() {
     <img src="/assets/item-security-white.png"></img>
     <div class="leaflet-popup__description">The biggest of all the carnivorous dinosaurs</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
-    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>${
-      isMobile ? 'Device not supported' : 'Soon'
-    }</a>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   beachMarker = L.marker([-31.80289258670676, -7.998046875000001], {
@@ -269,9 +288,7 @@ function addMarkers() {
     <img src="/assets/item-beach-white.png"></img>
     <div class="leaflet-popup__description">Relax on the most exotic beach</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
-    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>${
-      isMobile ? 'Device not supported' : 'Soon'
-    }</a>
+    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   brachioMarker = L.marker([21.453068633086783, -11.25], {
@@ -393,38 +410,6 @@ function addMarkers() {
     <div class="title">Ferry</div>
     <div class="separation"></div>
     <div class="description">Ferry landing</div>
-  `);
-
-  restaurantMarker = L.marker([6.315298538330033, 3.251953125], {
-    icon: L.icon({
-      iconUrl: 'assets/map/map-eat.png',
-      iconSize: [markerSize.sm, markerSize.sm],
-      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
-      popupAnchor: [0, -markerSize.sm / 2]
-    })
-  }).bindPopup(`
-    <div class="leaflet-popup__title">Fossil Restaurant</div>
-    <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-eat-white.png"></img>
-    <div class="leaflet-popup__description">Dishes from another time</div>
-    <div class="leaflet-popup__description">Click to enter</div>
-    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
-  `);
-
-  shopMarker = L.marker([3.425691524418062, 6.591796875000001], {
-    icon: L.icon({
-      iconUrl: 'assets/map/map-shop.png',
-      iconSize: [markerSize.sm, markerSize.sm],
-      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
-      popupAnchor: [0, -markerSize.sm / 2]
-    })
-  }).bindPopup(`
-    <div class="leaflet-popup__title">Prehistoric Domain Shop</div>
-    <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-shop-white.png"></img>
-    <div class="leaflet-popup__description">Don't leave without a souvenir</div>
-    <div class="leaflet-popup__description">Click to enter</div>
-    <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
   `);
 
   markers = {
