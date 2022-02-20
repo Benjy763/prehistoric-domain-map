@@ -202,7 +202,7 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-canoe-white.png"></img>
     <div class="leaflet-popup__description">Discover an unknown world by canoe</div>
-    <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
+    <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
@@ -218,7 +218,7 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-aviary-white.png"></img>
     <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
-    <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
+    <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>
   `);
 
@@ -234,7 +234,7 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-lagoon-white.png"></img>
     <div class="leaflet-popup__description">Meet the aquatic creatures of prehistory</div>
-    <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
+    <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a href="https://tour.prehistoricdomain.com/lagoon-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>
   `);
 
@@ -251,7 +251,7 @@ function addMarkers() {
     <img src="/assets/item-cine-white.png"></img>
     <div class="leaflet-popup__description">To Be Defined</div>
     <div class="leaflet-popup__description">Follow a dinosaur in his last moments</div>
-    <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
+    <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     ${
       isMobile
         ? '<a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Device not supported</a>'
@@ -271,7 +271,7 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-security-white.png"></img>
     <div class="leaflet-popup__description">The biggest of all the carnivorous dinosaurs</div>
-    <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
+    <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
@@ -287,7 +287,7 @@ function addMarkers() {
     <div class="leaflet-popup__separation"></div>
     <img src="/assets/item-beach-white.png"></img>
     <div class="leaflet-popup__description">Relax on the most exotic beach</div>
-    <div class="leaflet-popup__description">DESKTOP . PCVR . MOBILE . QUEST</div>
+    <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
