@@ -46,6 +46,8 @@ let tourMarker,
   pteranodonMarker,
   quetzaMarker,
   spinoMarker,
+  sarcoMarker,
+  dimeMarker,
   stegoMarker,
   megMarker;
 
@@ -55,7 +57,7 @@ addMarkers();
 addLayers();
 
 function initMap() {
-  L.tileLayer('assets/map-tiles/{z}/{x}/{y}.png', {
+  L.tileLayer('assets/map-tiles/{z}/{x}/{y}.png?lastmod=3', {
     minZoom: 3,
     maxZoom: 4,
     continuousWorld: false,
@@ -115,6 +117,8 @@ function addLayers() {
     pteranodonMarker,
     quetzaMarker,
     spinoMarker,
+    dimeMarker,
+    sarcoMarker,
     stegoMarker,
     megMarker
   ]);
@@ -127,7 +131,7 @@ function addLayers() {
 function addMarkers() {
   homeMarker = L.marker([6.664607562172573, 8.613281250000002], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-home.png',
+      iconUrl: 'assets/map/map-home.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -140,7 +144,7 @@ function addMarkers() {
 
   restaurantMarker = L.marker([6.315298538330033, 3.251953125], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-eat.png',
+      iconUrl: 'assets/map/map-eat.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -148,7 +152,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Fossil Restaurant</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-eat-white.png"></img>
+    <img src="/assets/item-eat-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Dishes from another time</div>
     <div class="leaflet-popup__description">Click to enter</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
@@ -156,7 +160,7 @@ function addMarkers() {
 
   shopMarker = L.marker([3.425691524418062, 3.251953125], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-shop.png',
+      iconUrl: 'assets/map/map-shop.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -164,7 +168,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Prehistoric Domain Shop</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-shop-white.png"></img>
+    <img src="/assets/item-shop-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Don't leave without a souvenir</div>
     <div class="leaflet-popup__description">Click to enter</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Closed</a>
@@ -172,7 +176,7 @@ function addMarkers() {
 
   tourMarker = L.marker([17.308687886770034, 6.328125000000001], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-tour.png',
+      iconUrl: 'assets/map/map-tour.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
@@ -180,7 +184,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Prehistoric Tour</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-tour-white.png"></img>
+    <img src="/assets/item-tour-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Experience the night tour of the park</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR</div>
     ${
@@ -192,7 +196,7 @@ function addMarkers() {
 
   canoeMarker = L.marker([-9.96885060854611, -36.03515625000001], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-canoe.png',
+      iconUrl: 'assets/map/map-canoe.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
@@ -200,7 +204,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Valley of wonders</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-canoe-white.png"></img>
+    <img src="/assets/item-canoe-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Discover an unknown world by canoe</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
@@ -208,7 +212,7 @@ function addMarkers() {
 
   aviaryMarker = L.marker([15.114552871944115, -59.94140625000001], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-aviary.png',
+      iconUrl: 'assets/map/map-aviary.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
@@ -216,7 +220,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Flying giants</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-aviary-white.png"></img>
+    <img src="/assets/item-aviary-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Meet the giant flying reptiles</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a href="https://tour.prehistoricdomain.com/aviary-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>
@@ -224,7 +228,7 @@ function addMarkers() {
 
   lagoonMarker = L.marker([-50, 18], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-lagoon.png',
+      iconUrl: 'assets/map/map-lagoon.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
@@ -232,7 +236,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Big Jaws</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-lagoon-white.png"></img>
+    <img src="/assets/item-lagoon-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Meet the aquatic creatures of prehistory</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a href="https://tour.prehistoricdomain.com/lagoon-scene/" class="leaflet-popup__button leaflet-popup__button-open">Open</a>
@@ -240,7 +244,7 @@ function addMarkers() {
 
   cineMarker = L.marker([4, 13], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-cine.png',
+      iconUrl: 'assets/map/map-cine.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
@@ -248,7 +252,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Cinema</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-cine-white.png"></img>
+    <img src="/assets/item-cine-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">To Be Defined</div>
     <div class="leaflet-popup__description">Follow a dinosaur in his last moments</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
@@ -261,23 +265,23 @@ function addMarkers() {
 
   securityMarker = L.marker([15, 35], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-security.png',
+      iconUrl: 'assets/map/map-security.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
     })
   }).bindPopup(`
-    <div class="leaflet-popup__title">High Security</div>
+    <div class="leaflet-popup__title">Swamp Things</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-security-white.png"></img>
-    <div class="leaflet-popup__description">The biggest of all the carnivorous dinosaurs</div>
+    <img src="/assets/item-security-white.png?lastmod=3"></img>
+    <div class="leaflet-popup__description">Discover the amazing creatures of the swamps</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
   `);
 
   beachMarker = L.marker([-31.80289258670676, -7.998046875000001], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-beach.png',
+      iconUrl: 'assets/map/map-beach.png?lastmod=3',
       iconSize: [markerSize.lg, markerSize.lg],
       iconAnchor: [markerSize.lg / 2, markerSize.lg / 2],
       popupAnchor: [0, -markerSize.lg / 2]
@@ -285,7 +289,7 @@ function addMarkers() {
   }).bindPopup(`
     <div class="leaflet-popup__title">Cretaceous Beach</div>
     <div class="leaflet-popup__separation"></div>
-    <img src="/assets/item-beach-white.png"></img>
+    <img src="/assets/item-beach-white.png?lastmod=3"></img>
     <div class="leaflet-popup__description">Relax on the most exotic beach</div>
     <div class="leaflet-popup__description">DESKTOP . PCVR . QUEST</div>
     <a class="leaflet-popup__button leaflet-popup__button-closed" disabled>Soon</a>
@@ -293,7 +297,7 @@ function addMarkers() {
 
   brachioMarker = L.marker([21.453068633086783, -11.25], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-brachio.png',
+      iconUrl: 'assets/map/map-brachio.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -302,7 +306,7 @@ function addMarkers() {
 
   diloMarker = L.marker([39.63953756436671, -28.125000000000004], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-dilo.png',
+      iconUrl: 'assets/map/map-dilo.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -311,7 +315,7 @@ function addMarkers() {
 
   trexMarker = L.marker([44.59046718130883, -8.613281250000002], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-trex.png',
+      iconUrl: 'assets/map/map-trex.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -320,7 +324,7 @@ function addMarkers() {
 
   deinoMarker = L.marker([37.30027528134433, 10.371093750000002], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-deino.png',
+      iconUrl: 'assets/map/map-deino.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -329,25 +333,43 @@ function addMarkers() {
 
   triceMarker = L.marker([26.58852714730864, 17.050781250000004], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-trice.png',
+      iconUrl: 'assets/map/map-trice.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Triceratops');
 
-  spinoMarker = L.marker([18, 44], {
+  spinoMarker = L.marker([14, 48], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-spino.png',
+      iconUrl: 'assets/map/map-spino.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
     })
   }).bindPopup('Spinosaurus');
 
+  sarcoMarker = L.marker([25, 40], {
+    icon: L.icon({
+      iconUrl: 'assets/map/map-sarco.png?lastmod=3',
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
+    })
+  }).bindPopup('Sarcosuchus');
+
+  dimeMarker = L.marker([21, 46], {
+    icon: L.icon({
+      iconUrl: 'assets/map/map-dime.png?lastmod=3',
+      iconSize: [markerSize.sm, markerSize.sm],
+      iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
+      popupAnchor: [0, -markerSize.sm / 2]
+    })
+  }).bindPopup('Dimetrodon');
+
   megMarker = L.marker([-50, 28], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-meg.png',
+      iconUrl: 'assets/map/map-meg.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -356,7 +378,7 @@ function addMarkers() {
 
   quetzaMarker = L.marker([22, -55], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-quetza.png',
+      iconUrl: 'assets/map/map-quetza.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -365,7 +387,7 @@ function addMarkers() {
 
   stegoMarker = L.marker([-30, -20], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-stego.png',
+      iconUrl: 'assets/map/map-stego.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -374,7 +396,7 @@ function addMarkers() {
 
   brachio2Marker = L.marker([-15.623036831528252, -22.851562500000004], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-brachio.png',
+      iconUrl: 'assets/map/map-brachio.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -383,7 +405,7 @@ function addMarkers() {
 
   trice2Marker = L.marker([-21.94304553343818, -23.378906250000004], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-trice.png',
+      iconUrl: 'assets/map/map-trice.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -392,7 +414,7 @@ function addMarkers() {
 
   pteranodonMarker = L.marker([21.94304553343818, -65.21484375000001], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-pteranodon.png',
+      iconUrl: 'assets/map/map-pteranodon.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -401,7 +423,7 @@ function addMarkers() {
 
   boatMarker = L.marker([-5.266007882805498, 107.05078125000001], {
     icon: L.icon({
-      iconUrl: 'assets/map/map-boat.png',
+      iconUrl: 'assets/map/map-boat.png?lastmod=3',
       iconSize: [markerSize.sm, markerSize.sm],
       iconAnchor: [markerSize.sm / 2, markerSize.sm / 2],
       popupAnchor: [0, -markerSize.sm / 2]
@@ -434,6 +456,8 @@ function addMarkers() {
     pteranodonMarker,
     quetzaMarker,
     spinoMarker,
+    sarcoMarker,
+    dimeMarker,
     stegoMarker,
     megMarker
   };
